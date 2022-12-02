@@ -1,2 +1,2 @@
 import sys
-with open (sys.argv[1]) as u:print(sum((lambda p,c:[1,2,3][(p+c)%3] + [0,3,6][(p  + 1) %3])(*map(lambda t:{"X" : 2 , "Y": 0, "Z" : 1, "A":0, "B":1, "C":2}[t],(b,a))) for a,b in [l.strip().split() for l in u.readlines()]))
+print(sum((p+c-1)%3 + 1 + p%3*3  for c,p in (("ABC YZX".index(t) for t in l.split()) for l in open(sys.argv[1]).readlines())))

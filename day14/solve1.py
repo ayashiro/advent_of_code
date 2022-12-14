@@ -27,15 +27,15 @@ with open(sys.argv[1]) as f :
                     tmp.append("o")
                 else :
                     tmp.append(".")
-            print("".join(tmp)[:-30])
+            print("".join(tmp))
     cnt = 0
     nowx, nowy = -1, -1
     maxy = max(map(lambda x:x[1], blocked)) + 2
-    while (500, 0) not in rocked:
+    while nowy < maxy:
         nowx, nowy = 500, 0
         dx = (0,-1,1)
         dy = (1, 1, 1)
-        while nowy  + 1 < maxy:
+        while nowy  < maxy:
             proceed = False
             for ddx , ddy in zip(dx, dy):
                 nx , ny = nowx + ddx , nowy+ddy
@@ -48,7 +48,7 @@ with open(sys.argv[1]) as f :
         cnt += 1
         #status_print()
     status_print()
-    print(cnt)
+    print(cnt - 1 )
         
             
         
